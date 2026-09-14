@@ -1,0 +1,429 @@
+@import url('https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@500;600;700&family=Poppins:wght@300;400;500;600&display=swap');
+
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+:root {
+  --pink: #e85d83;
+  --deep-pink: #b72d5a;
+  --soft-pink: #fff0f5;
+  --cream: #fffaf5;
+  --text: #4b2834;
+  --gold: #d6a84f;
+}
+
+body {
+  min-height: 100vh;
+  overflow-x: hidden;
+  font-family: "Poppins", sans-serif;
+  color: var(--text);
+  background:
+    radial-gradient(circle at 20% 20%, rgba(255,255,255,.9), transparent 30%),
+    radial-gradient(circle at 80% 70%, rgba(255,196,213,.5), transparent 35%),
+    linear-gradient(135deg, #fff6f8, #ffe8ef 50%, #fff8f0);
+}
+
+.app {
+  min-height: 100vh;
+  position: relative;
+}
+
+.screen {
+  display: none;
+  min-height: 100vh;
+  width: 100%;
+  padding: 30px 18px;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  animation: fadeIn .8s ease;
+}
+
+.screen.active {
+  display: flex;
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; transform: translateY(12px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+/* ROSA */
+#intro {
+  flex-direction: column;
+  text-align: center;
+}
+
+.rose-scene {
+  width: 280px;
+  height: 390px;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  animation: float 3s ease-in-out infinite;
+}
+
+.rose-glow {
+  position: absolute;
+  width: 210px;
+  height: 210px;
+  border-radius: 50%;
+  background: rgba(255, 100, 145, .18);
+  filter: blur(30px);
+}
+
+.rose {
+  width: 160px;
+  height: 160px;
+  position: relative;
+  transform: rotate(-7deg);
+  margin-top: -100px;
+}
+
+.petal, .center-petal {
+  position: absolute;
+  width: 75px;
+  height: 95px;
+  border-radius: 70% 30% 65% 35%;
+  background: linear-gradient(145deg, #ff8eaa, #d92f63);
+  box-shadow: inset -8px -8px 15px rgba(115, 16, 49, .18), 0 7px 18px rgba(145, 28, 70, .18);
+}
+
+.p1 { left: 42px; top: 5px; transform: rotate(5deg); }
+.p2 { left: 4px; top: 35px; transform: rotate(-55deg); }
+.p3 { left: 75px; top: 35px; transform: rotate(65deg); }
+.p4 { left: 15px; top: 75px; transform: rotate(-15deg); }
+.p5 { left: 68px; top: 78px; transform: rotate(35deg); }
+.p6 { left: 45px; top: 38px; transform: rotate(175deg); }
+.center-petal {
+  width: 48px;
+  height: 65px;
+  left: 58px;
+  top: 45px;
+  transform: rotate(12deg);
+  background: linear-gradient(145deg, #ffb0c1, #c92156);
+}
+
+.stem {
+  position: absolute;
+  width: 10px;
+  height: 200px;
+  background: linear-gradient(90deg, #3f8b53, #76b85d, #2d7041);
+  left: 76px;
+  top: 120px;
+  border-radius: 10px;
+  transform: rotate(5deg);
+  z-index: -1;
+}
+
+.leaf {
+  position: absolute;
+  width: 75px;
+  height: 35px;
+  background: linear-gradient(135deg, #75b861, #317848);
+  border-radius: 100% 0 100% 0;
+  top: 220px;
+}
+
+.leaf1 { left: 5px; transform: rotate(20deg); }
+.leaf2 { left: 77px; transform: rotate(155deg) scale(.85); }
+
+@keyframes float {
+  0%,100% { transform: translateY(0); }
+  50% { transform: translateY(-12px); }
+}
+
+.small-text {
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.45rem;
+  margin: -55px 0 22px;
+}
+
+.main-btn {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 30px;
+  background: linear-gradient(135deg, #d83e6a, #f07998);
+  color: white;
+  font: 600 1rem "Poppins", sans-serif;
+  cursor: pointer;
+  box-shadow: 0 10px 25px rgba(198, 43, 91, .25);
+  transition: .25s ease;
+}
+
+.main-btn:hover {
+  transform: translateY(-3px) scale(1.02);
+  box-shadow: 0 14px 30px rgba(198, 43, 91, .32);
+}
+
+/* CARDS */
+.card {
+  width: min(720px, 100%);
+  padding: clamp(28px, 6vw, 55px);
+  border: 1px solid rgba(255,255,255,.85);
+  border-radius: 30px;
+  background: rgba(255,255,255,.72);
+  backdrop-filter: blur(14px);
+  box-shadow: 0 25px 70px rgba(107, 31, 56, .12);
+  text-align: center;
+}
+
+.card h1 {
+  font: 700 clamp(2rem, 5vw, 3.2rem) "Cormorant Garamond", serif;
+  color: #70243e;
+  margin: 14px 0 16px;
+}
+
+.card > p {
+  line-height: 1.8;
+  font-size: 1.03rem;
+}
+
+.badge {
+  display: inline-block;
+  padding: 7px 13px;
+  border-radius: 999px;
+  background: #ffe0e9;
+  color: #a62e53;
+  font-size: .72rem;
+  font-weight: 600;
+  letter-spacing: 1.5px;
+}
+
+.options {
+  display: grid;
+  gap: 12px;
+  margin-top: 28px;
+}
+
+.options button {
+  padding: 16px 18px;
+  border: 1px solid #f2c5d2;
+  border-radius: 16px;
+  background: rgba(255,255,255,.8);
+  color: var(--text);
+  font: 500 1rem "Poppins", sans-serif;
+  cursor: pointer;
+  transition: .25s ease;
+}
+
+.options button:hover {
+  transform: translateX(5px);
+  background: #fff0f5;
+  border-color: #df7190;
+}
+
+.feedback {
+  min-height: 28px;
+  margin-top: 16px;
+  font-weight: 600;
+  color: #c12e59;
+}
+
+/* LLUVIA DE ROSAS */
+#roses {
+  overflow: hidden;
+  background: radial-gradient(circle, #fff5f7, #ffe2eb);
+}
+
+.celebration {
+  position: relative;
+  z-index: 3;
+  text-align: center;
+  padding: 30px;
+}
+
+.mini-rose {
+  font-size: 4rem;
+  animation: pulse 1.3s infinite;
+}
+
+.celebration h1 {
+  font: 700 clamp(2.4rem, 7vw, 4.5rem) "Cormorant Garamond", serif;
+  color: #9d274d;
+  margin: 15px 0;
+}
+
+.big-message {
+  font-size: clamp(1.1rem, 3vw, 1.4rem);
+  line-height: 1.7;
+  margin-bottom: 25px;
+}
+
+.big-message span {
+  color: #c53561;
+  font-weight: 600;
+}
+
+.falling-rose {
+  position: absolute;
+  top: -80px;
+  animation: fall linear forwards;
+  z-index: 1;
+  user-select: none;
+}
+
+@keyframes fall {
+  to {
+    transform: translateY(115vh) rotate(360deg);
+    opacity: .15;
+  }
+}
+
+@keyframes pulse {
+  50% { transform: scale(1.18); }
+}
+
+/* FINAL QUESTION */
+.special-card {
+  position: relative;
+}
+
+.sparkles {
+  color: var(--gold);
+  font-size: 1.7rem;
+  letter-spacing: 15px;
+}
+
+.question-love {
+  font: 600 clamp(1.5rem, 4vw, 2.2rem) "Cormorant Garamond", serif;
+  color: #9f3152;
+  margin: 22px 0 30px;
+}
+
+.yes-no {
+  display: flex;
+  gap: 15px;
+  justify-content: center;
+  flex-wrap: wrap;
+}
+
+.yes-no button {
+  border: none;
+  border-radius: 999px;
+  padding: 14px 28px;
+  font: 600 1rem "Poppins", sans-serif;
+  cursor: pointer;
+  transition: .25s;
+}
+
+.yes-btn { background: #f07c9c; color: white; }
+.no-btn { background: #f1e3e7; color: #633a48; }
+.yes-no button:hover { transform: translateY(-3px); }
+
+/* MINERALES */
+.rock-options {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 18px;
+  margin-top: 28px;
+}
+
+.rock-options button {
+  border: 1px solid #ecc5d0;
+  border-radius: 22px;
+  background: white;
+  padding: 25px 15px;
+  cursor: pointer;
+  color: var(--text);
+  transition: .3s;
+}
+
+.rock-options button:hover {
+  transform: translateY(-7px);
+  box-shadow: 0 15px 30px rgba(116, 34, 62, .12);
+}
+
+.rock-options span {
+  display: block;
+  font-size: 3rem;
+  margin-bottom: 10px;
+}
+
+.rock-options strong, .rock-options small {
+  display: block;
+}
+
+.rock-options small {
+  margin-top: 7px;
+  opacity: .7;
+}
+
+/* RESPUESTA */
+.answer-mineral {
+  font-size: 5rem;
+  animation: pulse 1.5s infinite;
+}
+
+.answer-card h2 {
+  font: 700 clamp(2.2rem, 6vw, 3.5rem) "Cormorant Garamond", serif;
+  color: #3d8a5a;
+  margin: 5px 0 20px;
+}
+
+.explanation {
+  max-width: 590px;
+  margin: auto;
+  line-height: 1.9;
+  font-size: 1.02rem;
+}
+
+.explanation strong {
+  color: #9c3151;
+}
+
+/* FINAL */
+.final-screen {
+  background: linear-gradient(135deg, #ffe5ed, #fff7f2);
+}
+
+.final-card {
+  width: min(750px, 100%);
+  text-align: center;
+  padding: clamp(35px, 7vw, 70px);
+  border-radius: 35px;
+  background: rgba(255,255,255,.7);
+  box-shadow: 0 30px 80px rgba(116, 35, 64, .15);
+}
+
+.final-card .heart {
+  font-size: 4rem;
+  color: #d9436d;
+  animation: pulse 1.4s infinite;
+}
+
+.final-card h1 {
+  font: 700 clamp(2.7rem, 7vw, 5rem) "Cormorant Garamond", serif;
+  color: #842643;
+  margin: 15px 0;
+}
+
+.final-card p {
+  font-size: 1.12rem;
+  line-height: 1.9;
+}
+
+.signature {
+  margin: 25px 0;
+  font-family: "Cormorant Garamond", serif;
+  font-size: 1.7rem !important;
+  color: #a63255;
+}
+
+.final-roses {
+  font-size: 2.5rem;
+  letter-spacing: 8px;
+  margin: 10px 0;
+}
+
+/* RESPONSIVE */
+@media (max-width: 600px) {
+  .screen { padding: 18px 12px; }
+  .card { border-radius: 23px; padding: 27px 19px; }
+  .rock-options { grid-template-columns: 1fr; }
+  .rose-scene { transform: scale(.85); margin-bottom: -30px; }
+}

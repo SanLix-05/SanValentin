@@ -1,0 +1,145 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Para una geóloga increíble 🌹</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="background-hearts"></div>
+
+  <main class="app">
+    <!-- ESCENA 1 -->
+    <section id="intro" class="screen active">
+      <div class="rose-scene">
+        <div class="rose-glow"></div>
+        <div class="rose">
+          <div class="petal p1"></div><div class="petal p2"></div>
+          <div class="petal p3"></div><div class="petal p4"></div>
+          <div class="petal p5"></div><div class="petal p6"></div>
+          <div class="center-petal"></div>
+          <div class="stem"></div>
+          <div class="leaf leaf1"></div><div class="leaf leaf2"></div>
+        </div>
+      </div>
+      <p class="small-text">Tengo algo preparado para ti...</p>
+      <button class="main-btn" onclick="showScreen('puzzle1')">Comenzar 🌹</button>
+    </section>
+
+    <!-- ESCENA 2 -->
+    <section id="puzzle1" class="screen">
+      <div class="card">
+        <span class="badge">PREGUNTA 1 · GEOLOGÍA</span>
+        <h1>Empecemos con algo que seguramente sabes... 🪨</h1>
+        <p>¿Cuál de estas rocas se forma principalmente por el enfriamiento y solidificación del magma o la lava?</p>
+
+        <div class="options">
+          <button onclick="answerFirst(this, false)">A. Roca sedimentaria</button>
+          <button onclick="answerFirst(this, true)">B. Roca ígnea</button>
+          <button onclick="answerFirst(this, false)">C. Roca metamórfica</button>
+        </div>
+        <p id="feedback1" class="feedback"></p>
+      </div>
+    </section>
+
+    <!-- ESCENA 3 -->
+    <section id="roses" class="screen">
+      <div id="roseRain"></div>
+      <div class="celebration">
+        <div class="mini-rose">🌹</div>
+        <h1>¡Sabía que lo lograrías! 🌹</h1>
+        <p class="big-message">Sabía que eres una <strong>increíble geóloga</strong>.<br><span>10 de 10 en todo. ✨</span></p>
+        <button class="main-btn" onclick="showScreen('puzzle2')">Continuar 💗</button>
+      </div>
+    </section>
+
+    <!-- ESCENA 4 -->
+    <section id="puzzle2" class="screen">
+      <div class="card">
+        <span class="badge">PREGUNTA 2 · GEOLOGÍA</span>
+        <h1>Una última para comprobarlo... 👀</h1>
+        <p>¿Qué escala se utiliza para medir la dureza relativa de los minerales?</p>
+
+        <div class="options">
+          <button onclick="answerSecond(this, false)">A. Escala de Richter</button>
+          <button onclick="answerSecond(this, true)">B. Escala de Mohs</button>
+          <button onclick="answerSecond(this, false)">C. Escala de Mercalli</button>
+        </div>
+        <p id="feedback2" class="feedback"></p>
+      </div>
+    </section>
+
+    <!-- ESCENA 5 -->
+    <section id="question3" class="screen">
+      <div class="card special-card">
+        <div class="sparkles">✦ ✧ ✦</div>
+        <h1>De verdad sabes mucho, ¿verdad? 😌</h1>
+        <p class="big-message">Pues responde esto:</p>
+        <p class="question-love">¿Sabes cuál es el mineral que más se me asemeja a ti?</p>
+
+        <div class="yes-no">
+          <button class="yes-btn" onclick="showRockOptions()">Sí, claro 💗</button>
+          <button class="no-btn" onclick="showAnswer('torbernita')">No 😳</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 6A -->
+    <section id="rockOptions" class="screen">
+      <div class="card">
+        <span class="badge">ELECCIÓN FINAL</span>
+        <h1>A ver... elige bien 👀</h1>
+        <p>¿Cuál de estos dos crees que es?</p>
+
+        <div class="rock-options">
+          <button onclick="showAnswer('cuarzo')">
+            <span>💎</span>
+            <strong>Cuarzo rosa</strong>
+            <small>Por su belleza y delicadeza</small>
+          </button>
+          <button onclick="showAnswer('torbernita')">
+            <span>☢️</span>
+            <strong>Torbernita</strong>
+            <small>Una elección un poquito más... radiante</small>
+          </button>
+        </div>
+      </div>
+    </section>
+
+    <!-- ESCENA 6B -->
+    <section id="answer" class="screen">
+      <div class="card answer-card">
+        <div class="answer-mineral" id="answerMineral">☢️</div>
+        <h1>La respuesta es...</h1>
+        <h2 id="mineralName">Torbernita 💚</h2>
+        <p class="explanation">
+          No es un mineral común. No solo por lo linda que puede ser su apariencia,
+          sino por la energía que irradia, incluso siendo radiactiva.
+          <br><br>
+          Y si yo tuviera que ser como alguien frente a esa radiactividad,
+          <strong>sería Marie Curie: fascinada por esa energía y sin poder dejar de admirarla.</strong> ✨
+        </p>
+        <button class="main-btn" onclick="showScreen('final')">Último mensaje 💌</button>
+      </div>
+    </section>
+
+    <!-- FINAL -->
+    <section id="final" class="screen final-screen">
+      <div class="final-roses">🌹 🌹 🌹</div>
+      <div class="final-card">
+        <div class="heart">♥</div>
+        <h1>Feliz Día del Amor y la Amistad</h1>
+        <p>
+          Para una geóloga increíble, inteligente, especial
+          y con una energía que definitivamente no pasa desapercibida.
+        </p>
+        <p class="signature">Con mucho cariño ❤️</p>
+        <div class="final-roses">🌹 ✨ 🌹</div>
+      </div>
+    </section>
+  </main>
+
+  <script src="script.js"></script>
+</body>
+</html>
